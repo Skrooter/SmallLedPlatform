@@ -24,3 +24,8 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+
+
+#other stuff
+PCB/#auto_saved_files#
+PCB/SmallLedPlatform-backups/

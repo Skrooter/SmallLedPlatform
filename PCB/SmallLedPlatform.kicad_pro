@@ -134,6 +134,10 @@
         {
           "diameter": 0.0,
           "drill": 0.0
+        },
+        {
+          "diameter": 0.45,
+          "drill": 0.2
         }
       ],
       "zones_allow_external_fillets": false,
@@ -391,8 +395,7 @@
           "+3V3",
           "+5V",
           "/VBUS_CONN",
-          "GND",
-          "VBUS"
+          "GND"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -439,6 +442,9 @@
           "/CC1_MCU",
           "/CC2",
           "/CC2_MCU",
+          "/Power/5V_Sense",
+          "/Power/OVLO",
+          "/Power/VIN_SENSE",
           "/SWD_SWCLK",
           "/SWD_SWDIO",
           "/USBPD_ENA",
@@ -517,6 +523,14 @@
     [
       "d71115cb-c282-4713-80a7-e4f7bd9dfc70",
       "Power"
+    ],
+    [
+      "9364bf2c-a747-4e93-a9ab-efc77751d1ea",
+      "Power LEDS"
+    ],
+    [
+      "fc8f7f9f-238d-4572-8023-45d5519aee65",
+      "MCU_HID"
     ]
   ],
   "text_variables": {}
