@@ -856,7 +856,7 @@
     (uuid d5564787-1e78-4c90-8a0f-9053cfb35872)
   )
 
-  (hierarchical_label "Vbus" (shape input) (at 36.83 41.91 180)
+  (hierarchical_label "VBUS_POWER_LEDS" (shape input) (at 36.83 41.91 180)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 88c52ec3-4475-4fc6-8c3d-768ecca5dc5d)
   )
