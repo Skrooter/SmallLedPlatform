@@ -61,27 +61,42 @@
           "width": 0.131318
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "hole_clearance|133244000|85299400|d7f1e46b-752f-4bd1-945e-0c366c10a64e|4a4e2df9-26fe-4995-bbcd-05fccee75f4f",
+        "hole_clearance|133244000|85299400|d7f1e46b-752f-4bd1-945e-0c366c10a64e|90798e3b-b2d8-4b9e-b543-f980bc2782b9",
+        "hole_clearance|133444000|85299400|d7f1e46b-752f-4bd1-945e-0c366c10a64e|2844c86d-f449-4aaa-9702-bcb132cde269",
+        "hole_clearance|133444000|85299400|d7f1e46b-752f-4bd1-945e-0c366c10a64e|ec39b4f6-548a-46ba-955b-f56ef85176f5",
+        "hole_clearance|138844000|85299400|5ec4ad9b-7ed0-4933-896b-2dd8878c2ac2|522e9e58-d6e2-47d5-a502-2f0e3031b68c",
+        "hole_clearance|138844000|85299400|5ec4ad9b-7ed0-4933-896b-2dd8878c2ac2|53a9c2e4-d4e0-4615-b04f-dda625d3c9cb",
+        "hole_clearance|139044000|85299400|5ec4ad9b-7ed0-4933-896b-2dd8878c2ac2|26c60838-a3da-42bd-a8a4-648c66376255",
+        "hole_clearance|139044000|85299400|5ec4ad9b-7ed0-4933-896b-2dd8878c2ac2|ba993e83-ffef-4363-a80d-8fbd188b2037"
+      ],
       "meta": {
         "version": 2
       },
       "rule_severities": {
         "annular_width": "error",
         "clearance": "error",
+        "connection_width": "warning",
         "copper_edge_clearance": "error",
+        "copper_sliver": "warning",
         "courtyards_overlap": "error",
         "diff_pair_gap_out_of_range": "error",
         "diff_pair_uncoupled_length_too_long": "error",
         "drill_out_of_range": "error",
         "duplicate_footprints": "warning",
         "extra_footprint": "warning",
+        "footprint": "error",
         "footprint_type_mismatch": "error",
         "hole_clearance": "error",
         "hole_near_hole": "error",
         "invalid_outline": "error",
+        "isolated_copper": "warning",
         "item_on_disabled_layer": "error",
         "items_not_allowed": "error",
         "length_out_of_range": "error",
+        "lib_footprint_issues": "warning",
+        "lib_footprint_mismatch": "warning",
         "malformed_courtyard": "error",
         "microvia_drill_out_of_range": "error",
         "missing_courtyard": "ignore",
@@ -91,9 +106,14 @@
         "padstack": "error",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
+        "silk_edge_clearance": "warning",
         "silk_over_copper": "warning",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
+        "solder_mask_bridge": "error",
+        "starved_thermal": "error",
+        "text_height": "warning",
+        "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
         "track_dangling": "warning",
@@ -102,7 +122,6 @@
         "unconnected_items": "error",
         "unresolved_variable": "error",
         "via_dangling": "warning",
-        "zone_has_empty_net": "error",
         "zones_intersect": "error"
       },
       "rules": {
@@ -110,20 +129,65 @@
         "allow_microvias": false,
         "max_error": 0.005,
         "min_clearance": 0.08889999999999999,
+        "min_connection": 0.0,
         "min_copper_edge_clearance": 0.0,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.19999999999999998,
         "min_microvia_drill": 0.09999999999999999,
+        "min_resolved_spokes": 2,
         "min_silk_clearance": 0.0,
-        "min_through_hole_diameter": 0.19999999999999998,
+        "min_text_height": 0.7999999999999999,
+        "min_text_thickness": 0.08,
+        "min_through_hole_diameter": 0.3,
         "min_track_width": 0.08889999999999999,
         "min_via_annular_width": 0.049999999999999996,
         "min_via_diameter": 0.44999999999999996,
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
+        "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
+      "teardrop_options": [
+        {
+          "td_allow_use_two_tracks": true,
+          "td_curve_segcount": 5,
+          "td_on_pad_in_zone": false,
+          "td_onpadsmd": true,
+          "td_onroundshapesonly": false,
+          "td_ontrackend": false,
+          "td_onviapad": true
+        }
+      ],
+      "teardrop_parameters": [
+        {
+          "td_curve_segcount": 0,
+          "td_height_ratio": 1.0,
+          "td_length_ratio": 0.5,
+          "td_maxheight": 2.0,
+          "td_maxlen": 1.0,
+          "td_target_name": "td_round_shape",
+          "td_width_to_size_filter_ratio": 0.9
+        },
+        {
+          "td_curve_segcount": 0,
+          "td_height_ratio": 1.0,
+          "td_length_ratio": 0.5,
+          "td_maxheight": 2.0,
+          "td_maxlen": 1.0,
+          "td_target_name": "td_rect_shape",
+          "td_width_to_size_filter_ratio": 0.9
+        },
+        {
+          "td_curve_segcount": 0,
+          "td_height_ratio": 1.0,
+          "td_length_ratio": 0.5,
+          "td_maxheight": 2.0,
+          "td_maxlen": 1.0,
+          "td_target_name": "td_track_end",
+          "td_width_to_size_filter_ratio": 0.9
+        }
+      ],
       "track_widths": [
         0.0,
         0.2032,
@@ -138,7 +202,7 @@
         },
         {
           "diameter": 0.45,
-          "drill": 0.2
+          "drill": 0.3
         }
       ],
       "zones_allow_external_fillets": false,
@@ -152,7 +216,11 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      "multiple_net_names|215900|1016000|7e5b9897-e99f-400b-9269-f74b3471475a|3ecf731d-2637-444f-b490-edce4e679e3b|||",
+      "multiple_net_names|215900|1016000|eef71746-b724-4daa-b493-cdafff425588|3ecf731d-2637-444f-b490-edce4e679e3b|||",
+      "pin_to_pin|1397000|1397000|249ef121-6186-4525-9bea-a96903d5d22e|50597f62-ea68-400c-aaa0-7b9ef56ff69a|/84eef422-4118-4730-b7a0-1fdaa916c3b4/d71115cb-c282-4713-80a7-e4f7bd9dfc70|/84eef422-4118-4730-b7a0-1fdaa916c3b4/d71115cb-c282-4713-80a7-e4f7bd9dfc70|/84eef422-4118-4730-b7a0-1fdaa916c3b4/d71115cb-c282-4713-80a7-e4f7bd9dfc70"
+    ],
     "meta": {
       "version": 0
     },
